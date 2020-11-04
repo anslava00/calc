@@ -4,7 +4,7 @@ using Microsoft.VisualBasic;
 using SharpDX.Direct3D11;
 using SharpDX.WIC;
 
-namespace calculator.Models
+namespace Сalculator.Models
 {
     static public class BinaryMathematics
     {

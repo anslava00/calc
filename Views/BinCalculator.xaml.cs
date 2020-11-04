@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using calculator.Models;
+using Сalculator.Models;
 
 namespace BinCalc.Views
 {
@@ -36,36 +36,33 @@ namespace BinCalc.Views
         
         private void ButtonClickOnResult(object sender, RoutedEventArgs e)
         {
-            if (MainStrokaMathOperation.Text != "" && TempStrokaForOperation.Text != "")
-            {
-                SecondNum = MainStrokaMathOperation.Text;
-                MainStrokaMathOperation.Text = BinaryMathematics.Calc(FirstNum, SecondNum, Operation);
-                FirstNum = MainStrokaMathOperation.Text;
-                Operation = null;
-                TempStrokaForOperation.Text = ""; 
-            }
+            if (MainStrokaMathOperation.Text == "" || TempStrokaForOperation.Text == "") return;
+            
+            SecondNum = MainStrokaMathOperation.Text;
+            MainStrokaMathOperation.Text = BinaryMathematics.Calc(FirstNum, SecondNum, Operation);
+            FirstNum = MainStrokaMathOperation.Text;
+            Operation = null;
+            TempStrokaForOperation.Text = "";
         }
         
         private void ButtonClickOnOperation(object sender, RoutedEventArgs e)
         {
-     
-            if (MainStrokaMathOperation.Text != "")
-            {
-                if (TempStrokaForOperation.Text != "")
-                {
-                    SecondNum = MainStrokaMathOperation.Text;
-                    MainStrokaMathOperation.Text = BinaryMathematics.Calc(FirstNum, SecondNum, Operation);
-                }
+            if (MainStrokaMathOperation.Text == "") return;
             
-                var ThisButton = (Button) sender;
-                Operation = ThisButton.Content.ToString();
-
-                FirstNum = MainStrokaMathOperation.Text;
-                MainStrokaMathOperation.Text = "";
-
-                TempStrokaForOperation.Text = FirstNum + Operation;
+            if (TempStrokaForOperation.Text != "")
+            {
+                SecondNum = MainStrokaMathOperation.Text;
+                MainStrokaMathOperation.Text = BinaryMathematics.Calc(FirstNum, SecondNum, Operation);
             }
             
+            var ThisButton = (Button) sender;
+            Operation = ThisButton.Content.ToString();
+
+            FirstNum = MainStrokaMathOperation.Text;
+            MainStrokaMathOperation.Text = "";
+
+            TempStrokaForOperation.Text = FirstNum + Operation;
+
         }
         
         private void ButtonClickOnInversiya(object sender, RoutedEventArgs e)

@@ -1,6 +1,6 @@
 using System;
 
-namespace calculator.Models
+namespace Сalculator.Models
 {
     static public class Mathematics
     {

@@ -4,9 +4,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using calculator.ViewModels;
+using Сalculator.ViewModels;
 
-namespace calculator
+namespace Сalculator
 {
     public class ViewLocator : IDataTemplate
     {

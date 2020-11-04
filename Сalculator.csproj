@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>calculator</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -12,6 +13,9 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
     <AvaloniaResource Include="Assets\**" />
+    <Compile Update="Views\DefaultСalculator.xaml.cs">
+      <DependentUpon>DefaultСalculator.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.12" />

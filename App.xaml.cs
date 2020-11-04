@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using calculator.ViewModels;
-using calculator.Views;
+using Сalculator.ViewModels;
+using Сalculator.Views;
 
-namespace calculator
+namespace Сalculator
 {
     public class App : Application
     {

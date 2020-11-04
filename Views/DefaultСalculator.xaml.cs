@@ -3,18 +3,18 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using calculator.Models;
+using Сalculator.Models;
 
-namespace calc.Views
+namespace DefaultСalc.Views
 {
-    public class calculator : UserControl
+    public class DefaultСalculator : UserControl
     {
         private TextBox MainStrokaMathOperation;
         private TextBox TempStrokaForOperation;
         private float FirstNum = 0;
         private float SecondNum = 0;
         private string TypeOperation = null;
-        public calculator()
+        public DefaultСalculator()
         {
             InitializeComponent();
             
@@ -30,7 +30,8 @@ namespace calc.Views
 
         private void ButtonClickOnResult(object sender, RoutedEventArgs e)
         {
-            if (MainStrokaMathOperation.Text != "" && TempStrokaForOperation.Text != "" && MainStrokaMathOperation.Text != ",")
+            if (MainStrokaMathOperation.Text != "" && TempStrokaForOperation.Text != "" &&
+                MainStrokaMathOperation.Text != ",")
             {
                 SecondNum = float.Parse(MainStrokaMathOperation.Text);
                 MainStrokaMathOperation.Text = Mathematics.Calc(FirstNum, SecondNum, TypeOperation);
@@ -46,8 +47,9 @@ namespace calc.Views
             {
                 if (TempStrokaForOperation.Text != "")
                 {
-                    MainStrokaMathOperation.Text = Mathematics.Calc(FirstNum, float.Parse(MainStrokaMathOperation.Text),
-                        TypeOperation);
+                    MainStrokaMathOperation.Text = Mathematics.Calc(FirstNum, 
+                                                                    float.Parse(MainStrokaMathOperation.Text),
+                                                                            TypeOperation);
                 }
                 
                 var ThisButton = (Button) sender;
@@ -73,7 +75,8 @@ namespace calc.Views
         {
             if (MainStrokaMathOperation.Text != "")
             {
-                MainStrokaMathOperation.Text = MainStrokaMathOperation.Text.Remove(MainStrokaMathOperation.Text.Length - 1, 1);
+                MainStrokaMathOperation.Text =
+                    MainStrokaMathOperation.Text.Remove(MainStrokaMathOperation.Text.Length - 1, 1);
                 if (MainStrokaMathOperation.Text == "-") MainStrokaMathOperation.Text = "";
             }
         }

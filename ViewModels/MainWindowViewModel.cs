@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace calculator.ViewModels
+namespace Сalculator.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
